@@ -64,6 +64,9 @@ public class EventDataActivity extends AppCompatActivity implements View.OnClick
         }
 
         update_event(true);
+
+        //TODO EX4: Llamar a los botones
+
         dpDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,10 +82,10 @@ public class EventDataActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void obtenerFecha() {
+        //TODO EX4: interface obtener la fecha
         DatePickerDialog recogerFecha = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-
                 event.setYear(year);
                 event.setMonth(month);
                 event.setDay(dayOfMonth);
@@ -95,6 +98,7 @@ public class EventDataActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void obtenerHora() {
+        //TODO EX4: interface obtener la hora
         TimePickerDialog recogerHora = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {

@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         tvCurrentData.setText("");
         try {
             event = new Model((Model) getIntent().getSerializableExtra("EventData"));
-            Log.i("year-antes_de_irse", "" + event.getYear());
             tvCurrentData.setText(getIntent().getStringExtra("Eventdata"));
         } catch (NullPointerException e) {
             tvCurrentData.setText("");
@@ -38,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void editEventData(View view) {
+        //TODO EX1: Bundle
         Intent intent = new Intent(this, EventDataActivity.class);
         Bundle bundle = new Bundle();
 
@@ -57,23 +57,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        //Log.i("year-antes_de_irse",""+event.getYear());
         if (requestCode == REQUEST && resultCode == RESULT_OK) {
             tvCurrentData.setText(data.getStringExtra("Eventdata"));
             event = (Model) data.getSerializableExtra("EventData");
         }
-
     }
-
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
+        //TODO ex1: Save
         super.onSaveInstanceState(outState);
         outState.putString("Event_save", tvCurrentData.getText().toString());
     }
 
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        //TODO ex1: Restore
         super.onRestoreInstanceState(savedInstanceState);
         tvCurrentData.setText(savedInstanceState.getString("Event_save"));
     }

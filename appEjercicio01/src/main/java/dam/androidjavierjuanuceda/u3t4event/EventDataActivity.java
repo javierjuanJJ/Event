@@ -38,7 +38,12 @@ public class EventDataActivity extends AppCompatActivity implements View.OnClick
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_data);
+        setUI();
+    }
+
+    private void setUI() {
         Resources res = getResources();
+        // TODO ex1 : Cargar las cadenas
         Months = res.getStringArray(R.array.Months);
 
         if (event != null) {
@@ -54,14 +59,10 @@ public class EventDataActivity extends AppCompatActivity implements View.OnClick
             event = new Model();
         }
 
-        setUI();
-
         Bundle inputData = getIntent().getExtras();
         tvEventName.setText(inputData.getString("EventName"));
         edPlace.setText(event.getPlace());
-    }
 
-    private void setUI() {
         tvEventName = findViewById(R.id.tvEventName);
         btAccept = findViewById(R.id.btAccept);
         btCancel = findViewById(R.id.btCancel);
@@ -85,14 +86,17 @@ public class EventDataActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
+        //TODO Ex1: Poner tanto Acept como Cancel hacer lo mismo.
         setResult(RESULT_OK, new Intent().putExtras(new Bundle(eventData())));
         finish();
     }
 
     private Bundle eventData() {
+        //TODO ex1: Mostrar la fecha y la hora.
         Bundle eventData = new Bundle();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
             eventData.putSerializable("EventData", new Model(tvEventName.getText().toString(), rgPriority.getCheckedRadioButtonId(), edPlace.getText().toString(), dpDate.getYear(), dpDate.getMonth(), dpDate.getDayOfMonth(), tpTime.getHour(), tpTime.getMinute(), 0));
+
         eventData.putString("Eventdata", "PLACE: " + event.getPlace() + "\n Priority: " + priority + "\n" + "Month: " + Months[dpDate.getMonth()] + "\n" + "Day: " + dpDate.getDayOfMonth() + "\n" + "Year: " + dpDate.getYear() + "\n" + "Hour: " + event.getHour() + ":" + event.getMinute());
         return eventData;
     }

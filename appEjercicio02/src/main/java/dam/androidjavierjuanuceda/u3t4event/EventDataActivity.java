@@ -125,6 +125,7 @@ public class EventDataActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void Rotacion() {
+        //TODO ex2: Rotacion
         dpDate.setCalendarViewShown(((((WindowManager) getApplicationContext().getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getOrientation()) == 3));
     }
 }

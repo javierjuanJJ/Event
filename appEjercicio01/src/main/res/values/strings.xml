@@ -16,6 +16,9 @@
     <string name="btCancel">Cancel</string>
     <string name="Place">Place: </string>
     <string name="hintPlace">Put a name place here</string>
+
+    <!--    TODO Ex1: Meses en cadenas.-->
+
     <string-array name="Months">
         <item>January</item>
         <item>February</item>
