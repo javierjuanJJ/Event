@@ -29,6 +29,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
+        <!--TODO EX1: TextView del lugar-->
+
         <TextView
             android:id="@+id/tvPlace"
             android:layout_width="wrap_content"
@@ -44,6 +46,8 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvEventName" />
+
+        <!--TODO EX1: editext del lugar-->
 
         <EditText
             android:id="@+id/edPlace"

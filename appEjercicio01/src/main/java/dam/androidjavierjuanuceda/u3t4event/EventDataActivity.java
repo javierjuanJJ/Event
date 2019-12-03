@@ -97,22 +97,23 @@ public class EventDataActivity extends AppCompatActivity implements View.OnClick
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
             eventData.putSerializable("EventData", new Model(tvEventName.getText().toString(), rgPriority.getCheckedRadioButtonId(), edPlace.getText().toString(), dpDate.getYear(), dpDate.getMonth(), dpDate.getDayOfMonth(), tpTime.getHour(), tpTime.getMinute(), 0));
 
-        eventData.putString("Eventdata", "PLACE: " + event.getPlace() + "\n Priority: " + priority + "\n" + "Month: " + Months[dpDate.getMonth()] + "\n" + "Day: " + dpDate.getDayOfMonth() + "\n" + "Year: " + dpDate.getYear() + "\n" + "Hour: " + event.getHour() + ":" + event.getMinute());
+        eventData.putString("Eventdata",
+                "PLACE: " + event.getPlace() +
+                        "\n Priority: " + priority +
+                        "\n" + "Month: " + Months[dpDate.getMonth()] +
+                        "\n" + "Day: " + dpDate.getDayOfMonth() + "\n" +
+                        "Year: " + dpDate.getYear() + "\n" + "Hour: " +
+                        event.getHour() + ":" + event.getMinute());
+
         return eventData;
     }
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         switch (checkedId) {
-            case R.id.rbLow:
-                priority = "Low";
-                break;
-            case R.id.rbNormal:
-                priority = "Normal";
-                break;
-            case R.id.rbHigh:
-                priority = "High";
-                break;
+            case R.id.rbLow: priority = "Low";break;
+            case R.id.rbNormal: priority = "Normal";break;
+            case R.id.rbHigh:priority = "High";break;
         }
     }
 

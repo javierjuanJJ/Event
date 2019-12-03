@@ -120,8 +120,7 @@ public class EventDataActivity extends AppCompatActivity implements View.OnClick
     private Bundle eventData() {
         Bundle eventData = new Bundle();
         update_event(false);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
-            eventData.putSerializable("EventData", event);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) eventData.putSerializable("EventData", event);
         eventData.putString("Eventdata", getString(R.string.textPlace) + event.getPlace() + "\n" + getString(R.string.Priority) + priority + "\n" + getString(R.string.Month) + Months[event.getMonth()] + "\n" + getString(R.string.Day) + event.getDay() + "\n" + getString(R.string.Year) + event.getYear() + "\n" + getString(R.string.Hour) + event.getHour() + ":" + event.getMinute());
         return eventData;
     }
@@ -129,15 +128,9 @@ public class EventDataActivity extends AppCompatActivity implements View.OnClick
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         switch (checkedId) {
-            case R.id.rbLow:
-                priority = "Low";
-                break;
-            case R.id.rbNormal:
-                priority = "Normal";
-                break;
-            case R.id.rbHigh:
-                priority = "High";
-                break;
+            case R.id.rbLow: priority = "Low";break;
+            case R.id.rbNormal: priority = "Normal";break;
+            case R.id.rbHigh: priority = "High";break;
         }
         event.setPriority(checkedId);
     }
