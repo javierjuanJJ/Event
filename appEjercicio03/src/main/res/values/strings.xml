@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">U3T4Event</string>
+    <string name="tvNewEvent">New Event </string>
+    <string name="etEventName">Type an Event Name </string>
+    <string name="tvCurrentData">Current Data</string>
+    <string name="btEditEventData">Edit Event Data</string>
+
+    <string name="title_activity_event_data">Event Data</string>
+    <string name="tvPriority">Priority</string>
+    <string name="rbLow">Low</string>
+    <string name="rbNormal">Normal</string>
+    <string name="rbHigh">High</string>
+    <string name="dpDate">Set Date and Time</string>
+
+    <string name="btAccept">Accept</string>
+    <string name="btCancel">Cancel</string>
+    <string name="Place">Place: </string>
+    <string name="hintPlace">Put a name place here</string>
+
+    <string name="btponer_fecha">Put a date</string>
+    <string name="btponer_hora">Put a hour</string>
+
+    <string name="Priority">Priority: </string>
+    <string name="Month">Month: </string>
+    <string name="Day">Day: </string>
+    <string name="Year">Year: </string>
+    <string name="Hour">Hour: </string>
+
+    <string-array name="Months">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+    <string name="textPlace">PLACE:</string>
+
+
+</resources>

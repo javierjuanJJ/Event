@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EventDataActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/tvEventName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="LargeText"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ff0000"
+            app:layout_constraintBottom_toTopOf="@+id/tvPriority"
+            app:layout_constraintEnd_toStartOf="@+id/tvPriority"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tvPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="403dp"
+            android:layout_marginBottom="974dp"
+            android:text="@string/Place"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEventName" />
+
+        <TextView
+            android:id="@+id/tvPriority"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="41dp"
+            android:text="@string/tvPriority"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            app:layout_constraintEnd_toStartOf="@+id/rgPriority"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPlace" />
+
+        <RadioGroup
+            android:id="@+id/rgPriority"
+            android:layout_width="194dp"
+            android:layout_height="92dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="6dp"
+            app:layout_constraintStart_toEndOf="@+id/tvPlace"
+            app:layout_constraintTop_toBottomOf="@+id/edPlace">
+
+            <RadioButton
+                android:id="@+id/rbLow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rbLow" />
+
+            <RadioButton
+                android:id="@+id/rbNormal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rbNormal" />
+
+            <RadioButton
+                android:id="@+id/rbHigh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rbHigh" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btAccept"
+            android:layout_width="215dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="64dp"
+            android:text="@string/btAccept"
+            app:layout_constraintEnd_toStartOf="@+id/btCancel"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rgPriority" />
+
+        <Button
+            android:id="@+id/btnTimePickerDialog"
+            android:layout_width="177dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/btponer_hora"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line1" />
+
+        <Button
+            android:id="@+id/btnDatePickerDialog"
+            android:layout_width="174dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/btponer_fecha"
+            app:layout_constraintStart_toEndOf="@+id/rgPriority"
+            app:layout_constraintTop_toBottomOf="@+id/line1" />
+
+        <Button
+            android:id="@+id/btCancel"
+            android:layout_width="206dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="48dp"
+            android:text="@string/btCancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rgPriority" />
+
+        <TextView
+            android:id="@+id/line1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="76dp"
+            android:layout_marginTop="37dp"
+            android:text="@string/dpDate"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            app:layout_constraintStart_toEndOf="@+id/edPlace"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/edPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="@android:dimen/dialog_min_width_major"
+            android:ems="10"
+            android:hint="@string/hintPlace"
+            android:inputType="textPersonName"
+            android:text="Name"
+            app:layout_constraintBottom_toTopOf="@+id/rgPriority"
+            app:layout_constraintStart_toEndOf="@+id/tvPlace"
+            app:layout_constraintTop_toBottomOf="@+id/tvEventName"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tvdate"
+            android:layout_width="174dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toEndOf="@+id/rgPriority"
+            app:layout_constraintTop_toBottomOf="@+id/btnDatePickerDialog" />
+
+        <TextView
+            android:id="@+id/tvhour"
+            android:layout_width="166dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:text="                           "
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.153"
+            app:layout_constraintStart_toEndOf="@+id/tvdate"
+            app:layout_constraintTop_toBottomOf="@+id/btnTimePickerDialog" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+

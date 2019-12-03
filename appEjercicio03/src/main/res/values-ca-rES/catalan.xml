@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">U3T4Event</string>
+    <string name="tvNewEvent">Nou event </string>
+    <string name="etEventName">Posa un tipus de event </string>
+    <string name="tvCurrentData">Dades actuals</string>
+    <string name="btEditEventData">Editar dades del event</string>
+
+    <string name="title_activity_event_data">Dades del event</string>
+    <string name="tvPriority">Prioritat</string>
+    <string name="rbLow">Baixa</string>
+    <string name="rbNormal">Normal</string>
+    <string name="rbHigh">Alta</string>
+    <string name="dpDate">Posar data i hora</string>
+
+    <string name="btAccept">Aceptar</string>
+    <string name="btCancel">Cancelar</string>
+    <string name="Place">Lloc: </string>
+    <string name="hintPlace">Posa el nom del lloc açí</string>
+
+    <string name="btponer_fecha">Posa la data</string>
+    <string name="btponer_hora">Posa l` hora</string>
+
+    <string name="Priority">Prioritat: </string>
+    <string name="Month">Mes: </string>
+    <string name="Day">Dia: </string>
+    <string name="Year">Any: </string>
+    <string name="Hour">Hora: </string>
+
+    <string-array name="Months">
+        <item>Gener</item>
+        <item>Febrer</item>
+        <item>Març</item>
+        <item>Abril</item>
+        <item>Mayo</item>
+        <item>Juny</item>
+        <item>Juliol</item>
+        <item>Agost</item>
+        <item>Septembre</item>
+        <item>Octobre</item>
+        <item>Novembre</item>
+        <item>Decembre</item>
+    </string-array>
+
+</resources>

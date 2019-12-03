@@ -1,0 +1,5 @@
+include ':app', ':Ejercicio1', ':Ejercicio2', ':Ejercicio3'
+rootProject.name='U3T4Event'
+project(':Ejercicio1').projectDir = new File('appEjercicio01')
+project(':Ejercicio2').projectDir = new File('appEjercicio02')
+project(':Ejercicio3').projectDir = new File('appEjercicio03')
