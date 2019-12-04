@@ -39,13 +39,9 @@ public class EventDataActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_data);
         setUI();
-    }
 
-    private void setUI() {
-        Resources res = getResources();
-        // TODO ex1 : Cargar las cadenas
-        Months = res.getStringArray(R.array.Months);
-
+        Months = getResources().getStringArray(R.array.Months);
+        Bundle inputData = getIntent().getExtras();
         if (event != null) {
             try {
                 event = new Model((Model) getIntent().getSerializableExtra("EventData"));
@@ -58,10 +54,13 @@ public class EventDataActivity extends AppCompatActivity implements View.OnClick
         } else {
             event = new Model();
         }
+        event.setTitle_Event(inputData.getString("EventName"));
 
-        Bundle inputData = getIntent().getExtras();
-        tvEventName.setText(inputData.getString("EventName"));
-        edPlace.setText(event.getPlace());
+
+    }
+
+    private void setUI() {
+        // TODO ex1 : Cargar las cadenas
 
         tvEventName = findViewById(R.id.tvEventName);
         btAccept = findViewById(R.id.btAccept);
@@ -71,17 +70,33 @@ public class EventDataActivity extends AppCompatActivity implements View.OnClick
         tpTime = findViewById(R.id.tpTime);
         edPlace = findViewById(R.id.edPlace);
 
+
+        try {
+            tvEventName.setText(event.getTitle_Event());
+            edPlace.setText(event.getPlace());
+
+
+            dpDate.updateDate(event.getYear(), event.getMonth(), event.getDay());
+            tpTime.setHour(event.getHour());
+            tpTime.setMinute(event.getMinute());
+            tvEventName.setText(event.getTitle_Event());
+
+
+            rgPriority.check(event.getPriority());
+        } catch (NullPointerException e) {
+
+        }
+
+
+
+
         btAccept.setOnClickListener(this);
         btCancel.setOnClickListener(this);
         rgPriority.setOnCheckedChangeListener(this);
 
-        dpDate.updateDate(event.getYear(), event.getMonth(), event.getDay());
-        tpTime.setHour(event.getHour());
-        tpTime.setMinute(event.getMinute());
-        tvEventName.setText(event.getTitle_Event());
-
         tpTime.setIs24HourView(true);
-        rgPriority.check(event.getPriority());
+
+
     }
 
     @Override
@@ -111,9 +126,15 @@ public class EventDataActivity extends AppCompatActivity implements View.OnClick
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         switch (checkedId) {
-            case R.id.rbLow: priority = "Low";break;
-            case R.id.rbNormal: priority = "Normal";break;
-            case R.id.rbHigh:priority = "High";break;
+            case R.id.rbLow:
+                priority = "Low";
+                break;
+            case R.id.rbNormal:
+                priority = "Normal";
+                break;
+            case R.id.rbHigh:
+                priority = "High";
+                break;
         }
     }
 
