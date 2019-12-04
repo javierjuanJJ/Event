@@ -72,23 +72,18 @@ public class EventDataActivity extends AppCompatActivity implements View.OnClick
 
 
         try {
+
             tvEventName.setText(event.getTitle_Event());
             edPlace.setText(event.getPlace());
-
-
             dpDate.updateDate(event.getYear(), event.getMonth(), event.getDay());
             tpTime.setHour(event.getHour());
             tpTime.setMinute(event.getMinute());
             tvEventName.setText(event.getTitle_Event());
-
-
             rgPriority.check(event.getPriority());
+
         } catch (NullPointerException e) {
 
         }
-
-
-
 
         btAccept.setOnClickListener(this);
         btCancel.setOnClickListener(this);
@@ -126,15 +121,9 @@ public class EventDataActivity extends AppCompatActivity implements View.OnClick
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         switch (checkedId) {
-            case R.id.rbLow:
-                priority = "Low";
-                break;
-            case R.id.rbNormal:
-                priority = "Normal";
-                break;
-            case R.id.rbHigh:
-                priority = "High";
-                break;
+            case R.id.rbLow: priority = "Low";break;
+            case R.id.rbNormal: priority = "Normal";break;
+            case R.id.rbHigh: priority = "High";break;
         }
     }
 
